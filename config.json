@@ -1,0 +1,127 @@
+{
+  "portfolios": {
+    "보수적 (Conservative)": {
+      "target_sharpe": 1.1,
+      "description": "안정성 중심의 보수적 포트폴리오",
+      "etfs": {
+        "KODEX 미국S&P500TR": {
+          "ticker": "379800",
+          "weight": 0.15,
+          "description": "미국 S&P500 지수 추종, 대형주 중심"
+        },
+        "TIGER 미국나스닥100": {
+          "ticker": "133690",
+          "weight": 0.05,
+          "description": "미국 나스닥100 지수 추종, 기술주 중심"
+        },
+        "KODEX 200": {
+          "ticker": "069500",
+          "weight": 0.05,
+          "description": "KOSPI 200 지수 추종, 한국 대형주"
+        },
+        "TIGER 200": {
+          "ticker": "102110",
+          "weight": 0.05,
+          "description": "KOSPI 200 지수 추종, 한국 대형주"
+        },
+        "TIGER 단기채권액티브": {
+          "ticker": "182490",
+          "weight": 0.30,
+          "description": "단기 채권 중심, 안정성 높음"
+        },
+        "KODEX 종합채권(AA-)": {
+          "ticker": "273130",
+          "weight": 0.20,
+          "description": "회사채 중심, 중기 채권"
+        },
+        "KODEX 골드선물(H)": {
+          "ticker": "132030",
+          "weight": 0.20,
+          "description": "금 선물 추종, 인플레이션 헤지"
+        }
+      }
+    },
+    "중립적 (Neutral)": {
+      "target_sharpe": 1.45,
+      "description": "성장과 안정성을 균형있게 조합한 포트폴리오",
+      "etfs": {
+        "KODEX 미국S&P500TR": {
+          "ticker": "379800",
+          "weight": 0.35,
+          "description": "미국 S&P500 지수 추종, 대형주 중심"
+        },
+        "TIGER 미국나스닥100": {
+          "ticker": "133690",
+          "weight": 0.15,
+          "description": "미국 나스닥100 지수 추종, 기술주 중심"
+        },
+        "KODEX 200": {
+          "ticker": "069500",
+          "weight": 0.10,
+          "description": "KOSPI 200 지수 추종, 한국 대형주"
+        },
+        "TIGER 200": {
+          "ticker": "102110",
+          "weight": 0.10,
+          "description": "KOSPI 200 지수 추종, 한국 대형주"
+        },
+        "TIGER 단기채권액티브": {
+          "ticker": "182490",
+          "weight": 0.10,
+          "description": "단기 채권 중심, 안정성 높음"
+        },
+        "KODEX 종합채권(AA-)": {
+          "ticker": "273130",
+          "weight": 0.10,
+          "description": "회사채 중심, 중기 채권"
+        },
+        "KODEX 골드선물(H)": {
+          "ticker": "132030",
+          "weight": 0.10,
+          "description": "금 선물 추종, 인플레이션 헤지"
+        }
+      }
+    },
+    "공격적 (Aggressive)": {
+      "target_sharpe": 1.6,
+      "description": "높은 수익을 추구하는 공격적 포트폴리오",
+      "etfs": {
+        "KODEX 미국S&P500TR": {
+          "ticker": "379800",
+          "weight": 0.45,
+          "description": "미국 S&P500 지수 추종, 대형주 중심"
+        },
+        "TIGER 미국나스닥100": {
+          "ticker": "133690",
+          "weight": 0.25,
+          "description": "미국 나스닥100 지수 추종, 기술주 중심"
+        },
+        "KODEX 200": {
+          "ticker": "069500",
+          "weight": 0.10,
+          "description": "KOSPI 200 지수 추종, 한국 대형주"
+        },
+        "TIGER 200": {
+          "ticker": "102110",
+          "weight": 0.10,
+          "description": "KOSPI 200 지수 추종, 한국 대형주"
+        },
+        "TIGER 단기채권액티브": {
+          "ticker": "182490",
+          "weight": 0.00,
+          "description": "단기 채권 중심, 안정성 높음"
+        },
+        "KODEX 종합채권(AA-)": {
+          "ticker": "273130",
+          "weight": 0.00,
+          "description": "회사채 중심, 중기 채권"
+        },
+        "KODEX 골드선물(H)": {
+          "ticker": "132030",
+          "weight": 0.10,
+          "description": "금 선물 추종, 인플레이션 헤지"
+        }
+      }
+    }
+  }
+}
