@@ -124,9 +124,11 @@ def get_portfolio_performance(portfolio_name: str) -> dict:
     total_return = (portfolio_index.iloc[-1] / portfolio_index.iloc[0] - 1) * 100
     mdd = calculate_mdd(portfolio_index)
     sharpe = calculate_sharpe_ratio(daily_returns)
-    
+    annual_return = daily_returns.mean() * 252 * 100  # 연환산 수익률(%)
+
     return {
         'total_return': total_return,
+        'annual_return': annual_return,  # 추가
         'mdd': mdd,
         'sharpe_ratio': sharpe,
         'target_sharpe': config.get('target_sharpe', 0),
