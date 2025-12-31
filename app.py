@@ -1,11 +1,10 @@
 import streamlit as st
+st.set_page_config(page_title="ISA Portfolio Dashboard", layout="wide")  # 반드시 첫 Streamlit 명령어
 import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
 from data_module import get_portfolio_performance, PORTFOLIO_CONFIG
 
-# 페이지 설정
-st.set_page_config(page_title="ISA Portfolio Dashboard", layout="wide")
 st.title("📊 ISA 포트폴리오 대시보드")
 
 # 사이드바
@@ -103,6 +102,14 @@ if perf:
         st.info(f"📌 **포트폴리오 설명**: {PORTFOLIO_CONFIG[portfolio].get('description', '')}")
     else:
         st.info("포트폴리오 데이터 없음")
+    
+    # 기간별 수익률 테이블 표시
+    from data_module import calculate_periodic_returns
+    st.markdown("---")
+    st.subheader("📅 기간별 수익률")
+    period_returns = calculate_periodic_returns(perf['prices'])
+    period_df = pd.DataFrame(period_returns, index=["수익률(%)"]).T
+    st.dataframe(period_df, use_container_width=True, hide_index=False)
     
     # 성과 통계
     st.markdown("---")
