@@ -136,3 +136,43 @@ def get_portfolio_performance(portfolio_name: str) -> dict:
         'returns': daily_returns,
         'last_updated': price_df.index[-1].strftime('%Y-%m-%d') if not price_df.empty else None
     }
+
+
+
+
+
+# ...기존 코드...
+
+def calculate_periodic_returns(prices: pd.Series) -> dict:
+    """
+    주어진 가격 시계열에서 기간별(1주, 1개월, 2개월, 3개월, 1년) 수익률을 계산
+    """
+    periods = {
+        '1주': 5,
+        '1개월': 21,
+        '2개월': 42,
+        '3개월': 63,
+        '1년': 252
+    }
+    results = {}
+    for label, days in periods.items():
+        if len(prices) >= days:
+            start_price = prices.iloc[-days]
+            end_price = prices.iloc[-1]
+            returns = (end_price - start_price) / start_price * 100
+            results[label] = round(returns, 2)
+        else:
+            results[label] = None
+    return results
+
+def get_portfolio_periodic_returns(portfolio_prices: dict) -> pd.DataFrame:
+    """
+    포트폴리오별 기간별 수익률을 DataFrame으로 반환
+    portfolio_prices: {포트폴리오명: 가격 시계열(pd.Series)}
+    """
+    data = {}
+    for name, prices in portfolio_prices.items():
+        data[name] = calculate_periodic_returns(prices)
+    df = pd.DataFrame(data).T
+    df.index.name = '포트폴리오'
+    return df
